@@ -62,6 +62,10 @@ int main()
     int nivel;
     cin>>nivel;
     initializare_Nivel(tarc,nivel);
+    while(playing)
+    {
+
+    }
 
     return 0;
 }
