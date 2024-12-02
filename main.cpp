@@ -13,13 +13,34 @@ v-vaci
 g-gard
 #-spatiu gol
 a-troaca
+nivel1+nivel2:dificultate start
+nivel3+nivel4:dificultate junior
+nivel5:dificultate master
 */
 
-void initializare_Nivel(char tarc[7][9])
+void initializare_Nivel(char tarc[7][9],int nivel)
 {
     char buffer;
     FILE *ftarc;
-    ftarc=fopen("Z:\\CodeBlocks\\Projects\\IP\\Smart Farmer\\tarc.txt","r+");
+    switch(nivel)
+    {
+    case 1:
+        ftarc=fopen("Z:\\CodeBlocks\\Projects\\IP\\Smart Farmer\\Nivele\\nivel1.txt","r+");
+        break;
+    case 2:
+        ftarc=fopen("Z:\\CodeBlocks\\Projects\\IP\\Smart Farmer\\Nivele\\nivel2.txt","r+");
+        break;
+    case 3:
+        ftarc=fopen("Z:\\CodeBlocks\\Projects\\IP\\Smart Farmer\\Nivele\\nivel3.txt","r+");
+        break;
+    case 4:
+        ftarc=fopen("Z:\\CodeBlocks\\Projects\\IP\\Smart Farmer\\Nivele\\nivel4.txt","r+");
+        break;
+    case 5:
+        ftarc=fopen("Z:\\CodeBlocks\\Projects\\IP\\Smart Farmer\\Nivele\\nivel5.txt","r+");
+        break;
+    }
+
     for (int i=0; i<7; i++)
     {
         for (int j=0; j<9; j++)
@@ -37,7 +58,10 @@ void initializare_Nivel(char tarc[7][9])
 int main()
 {
     char tarc[7][9];
-    initializare_Nivel(tarc);
+    bool playing;
+    int nivel;
+    cin>>nivel;
+    initializare_Nivel(tarc,nivel);
 
     return 0;
 }

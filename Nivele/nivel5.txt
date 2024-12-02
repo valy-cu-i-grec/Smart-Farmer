@@ -1,7 +1,7 @@
 g g g g g g g g g 
-g o a # v c p # g 
-g o a # v c p # g 
-g o a # v c p # g 
-g o a # v c p # g 
-g o a # v c p # g 
+g o # p # a # a g 
+g # # # # # # # g 
+g # # # # # # # g 
+g # # # # # # # g 
+g # # # # # # # g 
 g g g g g g g g g 
