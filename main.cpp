@@ -24,25 +24,26 @@ CONDITII GARD
 g intalneste g = not ok
 orice alta combinatie = ok
 ======
-
 */
-char matL[5][5]= {{'q','g','q',0,0},{'g',0,0,0,0},{'g',0,0,0,0},{'g',0,0,0,0},{'q',0,0,0,'v'}};
-char matGS[5][5]= {{'q',0,0,0,0},{'g',0,0,0,0},{'q',0,0,0,0},{0,0,0,0,0},{0,0,0,0,'v'}};
-char matGL[5][5]= {{'q',0,0,0,0},{'g',0,0,0,0},{'g',0,0,0,0},{'g',0,0,0,0},{'q',0,0,0,'v'}};
-
-void roteste(char m[5][5])
+char matL[7][7]= {{'v','#','#','#','#','#','o'},{'#','q','g','q','#','#','#'},{'#','g','#','#','#','#','#'},{'#','g','#','#','#','#','#'},
+{'#','g','#','#','#','#','#'},{'#','q','#','#','#','#','#'},{'o','#','#','#','#','#','v'}};
+char matGL[7][7]= {{'v','#','#','#','#','#','o'},{'#','q','#','#','#','#','#'},{'#','g','#','#','#','#','#'},{'#','g','#','#','#','#','#'},
+{'#','g','#','#','#','#','#'},{'#','q','#','#','#','#','#'},{'o','#','#','#','#','#','v'}};
+char matGS[7][7]= {{'v','#','#','#','#','#','o'},{'#','q','#','#','#','#','#'},{'#','g','#','#','#','#','#'},{'#','q','#','#','#','#','#'},
+{'#','#','#','#','#','#','#'},{'#','#','#','#','#','#','#'},{'o','#','#','#','#','#','v'}};
+void roteste(char m[7][7])
 {
-    for(int i=0; i<n; i++)
+    for(int i=0; i<7; i++)
     {
-        for(int j=i+1; j<n; j++)
-            swap(mat[i][j], mat[j][i]);
+        for(int j=i+1; j<7; j++)
+            swap(m[i][j], m[j][i]);
     }
 
-    for(int i=0; i<n; i++)
+    for(int i=0; i<7; i++)
     {
-        for(int j=0; j<n/2; j++)
+        for(int j=0; j<3; j++)
         {
-            swap(mat[i][j], mat[i][n-j-1]);
+            swap(m[i][j], m[i][7-j-1]);
         }
     }
 }
@@ -58,19 +59,19 @@ select_nivel:
     switch(nivel)
     {
     case 1:
-        ftarc=fopen("C:\\Users\\Valy\\OneDrive\\Desktop\\IP\\SmartFarmer\\Smart-Farmer\\Smart-Farmer\\Nivele\\nivel1.txt","r+");
+        ftarc=fopen("Nivele\\nivel1.txt","r+");
         break;
     case 2:
-        ftarc=fopen("C:\\Users\\Valy\\OneDrive\\Desktop\\IP\\SmartFarmer\\Smart-Farmer\\Smart-Farmer\\Nivele\\nivel2.txt","r+");
+        ftarc=fopen("Nivele\\nivel2.txt","r+");
         break;
     case 3:
-        ftarc=fopen("C:\\Users\\Valy\\OneDrive\\Desktop\\IP\\SmartFarmer\\Smart-Farmer\\Smart-Farmer\\Nivele\\nivel3.txt","r+");
+        ftarc=fopen("Nivele\\nivel3.txt","r+");
         break;
     case 4:
-        ftarc=fopen("C:\\Users\\Valy\\OneDrive\\Desktop\\IP\\SmartFarmer\\Smart-Farmer\\Smart-Farmer\\Nivele\\nivel4.txt","r+");
+        ftarc=fopen("Nivele\\nivel4.txt","r+");
         break;
     case 5:
-        ftarc=fopen("C:\\Users\\Valy\\OneDrive\\Desktop\\IP\\SmartFarmer\\Smart-Farmer\\Smart-Farmer\\Nivele\\nivel5.txt","r+");
+        ftarc=fopen("Nivele\\nivel5.txt","r+");
         break;
     default:
         cout<<"nivel invalid\n";
